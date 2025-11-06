@@ -1,0 +1,66 @@
+# Development Log
+
+## Day 1 - Project Setup
+
+### Backend
+- Created project structure
+- Set up Express server with middleware
+- Implemented MongoDB connection
+- Created User and Task models
+- Implemented authentication with JWT
+- Added password hashing with bcrypt
+- Created authentication routes and controllers
+- Implemented role-based access control
+- Added input validation with Joi
+- Set up error handling middleware
+
+### Frontend
+- Initialized React application with Vite
+- Created component structure
+- Implemented authentication UI
+- Built task management interface
+- Added state management for user and tasks
+- Created responsive design with CSS
+
+## Day 2 - API Development
+
+### Backend
+- Implemented CRUD operations for tasks
+- Added authorization checks for task operations
+- Created API versioning
+- Implemented security features (helmet, CORS)
+- Added logging with morgan
+- Created environment configuration
+- Set up proper HTTP status codes
+
+### Frontend
+- Connected frontend to backend APIs
+- Implemented JWT token handling
+- Added loading states and error handling
+- Created task listing with filtering
+- Implemented task creation, editing, and deletion
+- Added form validation
+
+## Day 3 - Testing and Documentation
+
+### Backend
+- Tested all API endpoints
+- Verified authentication and authorization
+- Checked input validation
+- Confirmed error handling
+- Created Postman collection
+- Added Docker configuration
+
+### Frontend
+- Tested all UI components
+- Verified API integration
+- Checked responsive design
+- Tested user flows (register, login, task management)
+- Added error messages and success feedback
+
+### Overall
+- Created comprehensive README documentation
+- Added scalability notes
+- Implemented Docker deployment
+- Created initialization scripts
+- Prepared deliverables for submission
