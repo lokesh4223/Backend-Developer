@@ -8,5 +8,14 @@ export default defineConfig({
     port: 3000
   },
   // Add base path for deployment
-  base: './'
+  base: '/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
+  }
 })
