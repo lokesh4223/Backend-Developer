@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import TaskList from './TaskList';
 import TaskForm from './TaskForm';
+import { API_BASE_URL } from '../utils/api';
 
 const Dashboard = ({ user, onLogout }) => {
   const [tasks, setTasks] = useState([]);
@@ -20,7 +21,7 @@ const Dashboard = ({ user, onLogout }) => {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get('http://localhost:5001/api/v1/tasks', config);
+      const res = await axios.get(`${API_BASE_URL}/api/v1/tasks`, config);
       setTasks(res.data.data);
       setLoading(false);
     } catch (err) {
@@ -31,7 +32,7 @@ const Dashboard = ({ user, onLogout }) => {
 
   const addTask = async (taskData) => {
     try {
-      const res = await axios.post('http://localhost:5001/api/v1/tasks', taskData, config);
+      const res = await axios.post(`${API_BASE_URL}/api/v1/tasks`, taskData, config);
       setTasks([...tasks, res.data.data]);
     } catch (err) {
       setError('Failed to add task');
@@ -40,7 +41,7 @@ const Dashboard = ({ user, onLogout }) => {
 
   const updateTask = async (id, taskData) => {
     try {
-      const res = await axios.put(`http://localhost:5001/api/v1/tasks/${id}`, taskData, config);
+      const res = await axios.put(`${API_BASE_URL}/api/v1/tasks/${id}`, taskData, config);
       setTasks(tasks.map(task => task._id === id ? res.data.data : task));
     } catch (err) {
       setError('Failed to update task');
@@ -49,7 +50,7 @@ const Dashboard = ({ user, onLogout }) => {
 
   const deleteTask = async (id) => {
     try {
-      await axios.delete(`http://localhost:5001/api/v1/tasks/${id}`, config);
+      await axios.delete(`${API_BASE_URL}/api/v1/tasks/${id}`, config);
       setTasks(tasks.filter(task => task._id !== id));
     } catch (err) {
       setError('Failed to delete task');

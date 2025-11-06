@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../utils/api';
 
 const AuthPage = ({ onLogin }) => {
   const [isLogin, setIsLogin] = useState(true);
@@ -37,7 +38,7 @@ const AuthPage = ({ onLogin }) => {
         : { name, email, password, role };
 
       const res = await axios.post(
-        `http://localhost:5001/api/v1/auth/${isLogin ? 'login' : 'register'}`,
+        `${API_BASE_URL}/api/v1/auth/${isLogin ? 'login' : 'register'}`,
         body,
         config
       );
